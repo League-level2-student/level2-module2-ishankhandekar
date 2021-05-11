@@ -1,5 +1,6 @@
 package _06_overloading;
 
+import java.awt.Color;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -20,24 +21,76 @@ public class LeagueOptionPane {
 	public static void showMessageDialog(String message) {
 		// 1. Open example.png and make a GUI that looks like that
 		//    The message parameter is what we want to show on our pop-up
-		
-		
+		JFrame frame = new JFrame();
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel();
+		label.setIcon(loadImage("league.png"));
+		JLabel label1 = new JLabel(message);
+		panel.add(label);
+		panel.add(label1);
+		frame.add(panel);
+		frame.setVisible(true);
+		frame.pack();
 		// 2. Uncomment the line of code below. It sets the location of our frame to the center of the screen
-		//frame.setLocationRelativeTo(null);
+		frame.setLocationRelativeTo(null);
 	}
 	
 	// 3. Call this method in the Runner class
-	
+	   
 
 	// 4. Create another showMessageDialog() method that lets us also choose the Message and Title 
 	//    2 String parameters (one for the message and one for the title)
-	
+	public static void showMessageDialog(String message, String title){
+		JFrame frame = new JFrame();
+		frame.setTitle(title);
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel();
+		label.setIcon(loadImage("league.png"));
+		JLabel label1 = new JLabel(message);
+		panel.add(label);
+		panel.add(label1);
+		frame.add(panel);
+		frame.setVisible(true);
+		frame.pack();
+		// 2. Uncomment the line of code below. It sets the location of our frame to the center of the screen
+		frame.setLocationRelativeTo(null);
+	}
 	// 5. Call this method in the Runner class
 	
 	
 	// 6. Create another showMessageDialog() method that lets us choose the Message, Title, and Image
 	//    3 String parameters (one for the message, one for the title, and one for the fileName)
-	
+	public static void showMessageDialog(String message, String title,String icon){
+		JFrame frame = new JFrame();
+		frame.setTitle(title);
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel();
+		label.setIcon(loadImage(icon));
+		JLabel label1 = new JLabel(message);
+		panel.add(label);
+		panel.add(label1);
+		frame.add(panel);
+		frame.setVisible(true);
+		frame.pack();
+		// 2. Uncomment the line of code below. It sets the location of our frame to the center of the screen
+		frame.setLocationRelativeTo(null);
+	}
+	public static void showMessageDialog(String message, String title,String icon, int background){
+		JFrame frame = new JFrame();
+		frame.setBackground(new Color(background));
+		frame.setTitle(title);
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel();
+		label.setIcon(loadImage(icon));
+		JLabel label1 = new JLabel(message);
+		panel.add(label);
+		panel.add(label1);
+		frame.add(panel);
+		frame.setVisible(true);
+		frame.pack();
+		// 2. Uncomment the line of code below. It sets the location of our frame to the center of the screen
+		frame.setLocationRelativeTo(null);
+	}
 	// 7. Call this method in the Runner class
 	
 	// CHALLENGE: 

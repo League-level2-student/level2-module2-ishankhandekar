@@ -4,8 +4,16 @@ package _05_overriding;
  * GOAL: Override the show() and receipt() methods from Pizza
  */
 public class PepperoniPizza extends Pizza {
-	// 1. Copy the show() method from Pizza, but change it so it shows a Pepperoni Pizza 
-	
+	// 1. Copy the show() method from Pizza, but change it so it shows a Pepperoni Pizza
+	@Override 
+	public void show() {
+		frame.setTitle("pepperoni pizza");
+		label.setIcon(loadImage("pepperoniPizza.png"));
+	}
+	@Override 
+	public void receipt() {
+		System.out.println("You purchased a pizza for $12");
+	}
 	// 2. Add @Override above the method
 	//	  This helps with preventing errors(you can ask your teacher for further explanation)
 	
